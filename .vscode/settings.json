@@ -1,5 +1,11 @@
 {
     "marquee.widgets.npm-stats.packageNames": [
         "react-the-complete-guide"
-    ]
+    ],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+    }
 }

@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useEffect } from "react";
 
 import LoaderSpinner from "./components/UI/Loader/LoaderSpinner";
-import MoviesList from "./components/MoviesList";
+import MoviesList from "./components/Movies/MoviesList";
+import AddMovie from "./components/Add_Movie/addMovie";
 import "./App.css";
 
 function App() {
@@ -34,11 +35,15 @@ function App() {
       setError(error.message);
     }
     setIsLoading(false);
-  },[]);
+  }, []);
 
   useEffect(() => {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
+
+  const addMovieHandler = (movie) => {
+    console.log(movie);
+  };
   
   let content = <p>Found no movies...</p>;
 
@@ -56,6 +61,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <section>
+        <AddMovie onAddMovie={addMovieHandler} />
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
