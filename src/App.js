@@ -16,7 +16,7 @@ function App() {
     try {
       const response = await fetch(
         "https://react-http-simple-movie-proj-default-rtdb.firebaseio.com/movies.json"
-      ); // ! invalid URL
+      );
       // ! Catch a real error
       if (!response.ok) {
         throw new Error("Something went wrong!");
